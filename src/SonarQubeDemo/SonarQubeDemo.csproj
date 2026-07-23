@@ -9,4 +9,11 @@
     <AssemblyName>SonarQubeDemo</AssemblyName>
   </PropertyGroup>
 
+  <!-- Third-party OSS dependencies, managed via NuGet (PackageReference) -->
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Serilog" Version="4.2.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+  </ItemGroup>
+
 </Project>
