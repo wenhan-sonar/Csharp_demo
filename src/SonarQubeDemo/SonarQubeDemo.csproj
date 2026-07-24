@@ -11,9 +11,22 @@
 
   <!-- Third-party OSS dependencies, managed via NuGet (PackageReference) -->
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Serilog" Version="4.2.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+  </ItemGroup>
+
+  <!--
+    WARNING: The packages below are pinned to intentionally OUTDATED, VULNERABLE
+    versions to demonstrate SonarQube Cloud dependency-risk (SCA) detection.
+    DO NOT use these versions in production.
+      - Newtonsoft.Json 12.0.3 -> CVE-2024-21907 (GHSA-5crp-9r3c-p9vr), High, DoS.
+                                   Fixed in 13.0.1.
+      - log4net 2.0.8          -> CVE-2018-1285 (GHSA-2cwj-8chv-9pp9), XXE.
+                                   Fixed in 2.0.10.
+  -->
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="log4net" Version="2.0.8" />
   </ItemGroup>
 
 </Project>
